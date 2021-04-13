@@ -1,0 +1,32 @@
+
+<h1> <%= @user.first_name %>'s info </h1>
+<div class="container">
+  <div class="col-12">
+
+
+<table class="table table-bordered table-hover bg-light ">
+  <thead>
+    <tr>
+   <th>user id</th>
+    <th>First Name</th>
+    <th> Last name </th>
+    <th> Email </th>
+    <th> actions </th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @user.id %></td>
+              <td><%= @user.first_name %></td>
+              <td><%= @user.last_name %></td>
+              <td><%= @user.email %></td>
+        <td><%= link_to 'Edit', admin_users_path , class: "btn btn-warning btn-sm"%> |
+			<%= link_to 'Back', admin_users_path, class: "btn btn-primary btn-sm" %></td>
+
+      </tr>
+  </tbody>
+</table>
+
+</div>
+</div>
