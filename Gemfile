@@ -32,6 +32,8 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'devise-i18n'
+gem 'activestorage', '~> 6.1', '>= 6.1.3.1'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

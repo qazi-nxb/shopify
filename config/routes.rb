@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
   root "welcome#index"
+  get 'add_to_cart', to: 'cart#add_to_card'
+  get 'cart/index'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
