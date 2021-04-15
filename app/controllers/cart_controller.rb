@@ -4,10 +4,17 @@ class CartController < ApplicationController
   end
 
   def add_to_card
-    session[:cart] = session[:cart] || []
-    session[:cart] << {product_id: params[:product][:product_id], qty: params[:product][:qty]}
+    session[:cart] = session[:cart] || {}
+    session[:cart][params[:product][:product_id]] = {product_id: params[:product][:product_id], qty: params[:product][:qty]}
 
     redirect_to root_path
 
+  end
+
+  def destroy
+    id = params[:id]
+    session[:cart].delete(id)
+
+    redirect_to cart_index_path
   end
 end

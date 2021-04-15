@@ -1,4 +1,4 @@
-<% if session[:cart] %>
+<% if session[:cart] != {} %>
   <table class="table table-bordered table-hover bg-light ">
     <thead>
     <tr>
@@ -10,7 +10,9 @@
 
     </tr>
     </thead>
-  <% session[:cart].each do |hsh| %>
+
+  <% session[:cart].each do |_, hsh| %>
+
   <% product = Product.find(hsh["product_id"]) %>
       <tbody>
       <tr>
@@ -18,7 +20,7 @@
         <td><%= product.price %></td>
         <td><%= hsh["qty"].to_f %></td>
         <td><%= product.price * hsh["qty"].to_f %></td>
-        <td><%= link_to 'Delete', class: "btn btn-warning btn-sm"%>
+        <td><%= link_to 'Delete', remove_path(id: product.id), method: :delete , class: "btn btn-warning btn-sm"%>
 
       </tr>
       </tbody>
@@ -26,6 +28,18 @@
 
   <% end %>
   </table>
+
+  <h1>Grand Total: </h1>
+  <p>
+  <% sum = 0 %>
+  <% session[:cart].each do |_,hsh| %>
+    <% product = Product.find(hsh["product_id"]) %>
+    <% value = product.price * hsh["qty"].to_f  %>
+    <% sum= sum + value %>
+  <% end %>
+  <%= sum %>
+  </p>
+
   <%= link_to 'Place order' %>
   <%else %>
   <br>

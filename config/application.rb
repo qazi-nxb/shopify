@@ -18,5 +18,16 @@ module Shopify
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'gmail.com',
+      user_name:            'faheemqaxi@gmail.com',
+      password:             'how r u?',
+      authentication:       :plain,
+      enable_starttls_auto: true
+    }
+
   end
 end
