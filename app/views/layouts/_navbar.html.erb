@@ -24,23 +24,24 @@
         <% end %>
 
 
-        <li class="nav-item">
-          <%= link_to  cart_index_path, class: "nav-link" do %>
-            <%= fa_icon 'shopping-cart' %> cart
-          <% end %>
+
         <li class="nav-item <%= 'active' if request.path ==  edit_user_registration_path%>">
           <%= link_to edit_user_registration_path , class: "nav-link" do %>
             <%= fa_icon 'edit' %> Edit Profile
           <% end %>
         </li>
 
-        </li>
+
       </ul>
-      <form class="d-flex ml-auto">
+      <form class="d-flex ml-auto navbar-nav">
         <div class="nav-item uname">
           <%= fa_icon 'user' %> <%= current_user.full_name %>
         </div>
-
+        <div class="nav-item pr-2 <%= 'active' if request.path ==  cart_index_path %>">
+          <%= link_to  cart_index_path, :class => "nav-link ccart " do %>
+            <%= fa_icon 'shopping-cart' %> cart
+          <% end %>
+        </div>
         <div class="nav-item logb">
           <%= link_to "Logout", destroy_user_session_path, class: "btn btn-xs btn-danger", method: :delete %>
         </div>
