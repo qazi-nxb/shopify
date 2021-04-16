@@ -23,7 +23,7 @@
       <% end %>
     </table>
 
-    <h1>Grand Total: </h1>
+
     <p>
       <% sum = 0 %>
       <% session[:cart].each do |_,hsh| %>
@@ -31,13 +31,13 @@
         <% value = product.price * hsh["qty"].to_f  %>
         <% sum= sum + value %>
       <% end %>
-      <%= sum %>
+     <h1>Grand Total: <%= sum %> </h1>
     </p>
-
-    <%= link_to 'Place order' %>
+    <% session[:sum]=sum %>
+    <%= link_to 'Place order', payments_index_path(), class: "btn btn-primary"%>
     <%else %>
       <br>
-      <h1> You have nothing in cart :( </h1>
+      <h1 class=" display-4 customheading" > You have nothing in cart :( </h1>
       <%= link_to 'Start Shopping', welcome_index_path, class: "btn btn-success btn-lg" %>
 <% end %>
 

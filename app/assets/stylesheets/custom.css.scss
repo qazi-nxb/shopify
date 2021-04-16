@@ -37,3 +37,26 @@ padding-top: 3px;
   color: rgba(255, 255, 255, 0.5);
   padding-top: 5px;
 }
+
+.customheading
+{
+  text-align: center;
+  border-width: thick;
+  border: #999999 solid;
+  font-family: "Trirong", serif;
+  font-variant: all-petite-caps;
+  font-weight: bold;
+  border-radius: 25px;
+  user-select: none;
+
+}
+.center
+{
+  text-align: center;
+}
+
+.customcard
+{
+  align-items: center;
+  text-align: center;
+}

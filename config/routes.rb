@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   get 'add_to_cart', to: 'cart#add_to_card'
   get 'cart/index'
   delete 'remove', to: 'cart#destroy'
+  get 'payments/index'
+  get "cash_on_delivery", to: 'payments#cash_on_delivery'
+  get "credit_cart_payment", to: 'payments#credit_cart_payment'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

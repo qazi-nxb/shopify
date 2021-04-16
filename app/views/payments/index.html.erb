@@ -1,0 +1,18 @@
+<div class="container">
+<br><h1 class="display-4 customheading"> Confirm Payment Method </h1>
+
+<div class="center offset-lg-4 offset-sm-2 mt-xl-5">
+<div class="card bg-light mb-3" style="max-width: 19rem; height: 20rem">
+  <div class="card-header center font-weight-bold">Payment</div>
+  <div class="card-body">
+    <p> You have an order of <%=session[:sum] %> rs, Kindly confirm you payment method now</p>
+  <div class="center">
+    <%= link_to 'Cash on delivery', cash_on_delivery_path, class: "btn btn-info  center mb-1" %>
+
+    <%= link_to 'Credit card Payment', credit_cart_payment_path, class: "btn btn-info " %>
+  </div>
+
+  </div>
+</div>
+</div>
+</div>

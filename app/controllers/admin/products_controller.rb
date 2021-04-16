@@ -1,4 +1,5 @@
 class Admin::ProductsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_admin_product, only: %i[ show edit update destroy ]
   before_action :checkrole
   # GET /admin/products or /admin/products.json

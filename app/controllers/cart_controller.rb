@@ -1,4 +1,5 @@
 class CartController < ApplicationController
+  before_action :authenticate_user!
   def index
 
   end
@@ -13,6 +14,7 @@ class CartController < ApplicationController
 
   def destroy
     id = params[:id]
+    session[:sum] = nil
     session[:cart].delete(id)
     redirect_to cart_index_path
   end
