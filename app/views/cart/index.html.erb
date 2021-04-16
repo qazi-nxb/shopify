@@ -1,48 +1,44 @@
-<% if session[:cart] != {} %>
-  <table class="table table-bordered table-hover bg-light ">
-    <thead>
-    <tr>
-      <th> Product Name</th>
-      <th> Product Price</th>
-      <th> Product Quantity</th>
-      <th> Total Price </th>
-      <th> Actions </th>
+<% if session[:cart] != {} && session[:cart] %>
+    <table class="table table-bordered table-hover bg-light ">
+      <thead>
+        <tr>
+          <th> Product Name</th>
+          <th> Product Price</th>
+          <th> Product Quantity</th>
+          <th> Total Price </th>
+          <th> Actions </th>
+        </tr>
+      </thead>
+      <% session[:cart].each do |_, hsh| %>
+        <% product = Product.find(hsh["product_id"]) %>\
+          <tbody>
+            <tr>
+              <td><%= product.name %></td>
+              <td><%= product.price %></td>
+              <td><%= hsh["qty"].to_f %></td>
+              <td><%= product.price * hsh["qty"].to_f %></td>
+              <td><%= link_to 'Delete', remove_path(id: product.id), method: :delete , class: "btn btn-warning btn-sm"%>
+            </tr>
+          </tbody>
+      <% end %>
+    </table>
 
-    </tr>
-    </thead>
+    <h1>Grand Total: </h1>
+    <p>
+      <% sum = 0 %>
+      <% session[:cart].each do |_,hsh| %>
+        <% product = Product.find(hsh["product_id"]) %>
+        <% value = product.price * hsh["qty"].to_f  %>
+        <% sum= sum + value %>
+      <% end %>
+      <%= sum %>
+    </p>
 
-  <% session[:cart].each do |_, hsh| %>
-
-  <% product = Product.find(hsh["product_id"]) %>
-      <tbody>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.price %></td>
-        <td><%= hsh["qty"].to_f %></td>
-        <td><%= product.price * hsh["qty"].to_f %></td>
-        <td><%= link_to 'Delete', remove_path(id: product.id), method: :delete , class: "btn btn-warning btn-sm"%>
-
-      </tr>
-      </tbody>
-
-
-  <% end %>
-  </table>
-
-  <h1>Grand Total: </h1>
-  <p>
-  <% sum = 0 %>
-  <% session[:cart].each do |_,hsh| %>
-    <% product = Product.find(hsh["product_id"]) %>
-    <% value = product.price * hsh["qty"].to_f  %>
-    <% sum= sum + value %>
-  <% end %>
-  <%= sum %>
-  </p>
-
-  <%= link_to 'Place order' %>
-  <%else %>
-  <br>
-  <h1> You have nothing in cart :( </h1>
+    <%= link_to 'Place order' %>
+    <%else %>
+      <br>
+      <h1> You have nothing in cart :( </h1>
+      <%= link_to 'Start Shopping', welcome_index_path, class: "btn btn-success btn-lg" %>
 <% end %>
+
 

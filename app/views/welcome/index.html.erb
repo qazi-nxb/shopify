@@ -1,39 +1,36 @@
 
 <h1> products</h1>
 <div class="container">
-<% i=1 %>
   <div class="row">
     <% @products.each do |product| %>
 
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div>
-        <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 18rem;">
 
-          <% if product.avatar.attached? %>
-          <%= image_tag url_for(product.avatar), :alt => "Product image" ,class:"imghelper"%>
-          <%end %>
-          <div class="card-body">
-            <h5 class="card-title"> <%= product.name %></h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"> <%= product.price  %></li>
-          </ul>
-          <div class="card-body">
-           <div class=" d-flex justify-content-center">
-               <%= form_for :product, :url => {:action=>"add_to_card", :controller=>"cart"}, :html => {:class => "nifty_form", :method => "GET"} do |f| %>
-                 <%= f.hidden_field :product_id, :value => product.id %>
-                 <%= f.label :qty, "Search for:" %>
-                 <%= f.number_field :qty, :value => 1, :min => 1 %>
-                 <%= f.submit 'Add to Cart'%>
-               <% end %>
-           </div>
+            <% if product.avatar.attached? %>
+              <%= image_tag url_for(product.avatar), :alt => "Product image" ,class:"imghelper"%>
+            <%end %>
+            <div class="card-body">
+             <h5 class="card-title"> <%= product.name %></h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
-        </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> <%= product.price  %></li>
+            </ul>
+            <div class="card-body">
+             <div class=" d-flex justify-content-center">
+                 <%= form_for :product, :url => {:action=>"add_to_card", :controller=>"cart"}, :html => {:class => "nifty_form", :method => "GET"} do |f| %>
+                   <%= f.hidden_field :product_id, :value => product.id %>
+                   <%= f.label :qty, "Search for:" %>
+                   <%= f.number_field :qty, :value => 1, :min => 1 %>
+                   <%= f.submit 'Add to Cart'%>
+                 <% end %>
+             </div>
+            </div>
+          </div>
         </div>
       </div>
-      <% i= i+1 %>
-  <% end %>
+    <% end %>
   </div>
-
 </div>

@@ -24,7 +24,7 @@ module Shopify
       port:                 587,
       domain:               'gmail.com',
       user_name:            'faheemqaxi@gmail.com',
-      password:             'how r u?',
+      password:             ENV["GMAIL_PASS"],
       authentication:       :plain,
       enable_starttls_auto: true
     }
