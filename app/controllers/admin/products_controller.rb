@@ -1,7 +1,7 @@
-class Admin::ProductsController < ApplicationController
-  before_action :authenticate_user!
+class Admin::ProductsController < Admin::BaseController
+
   before_action :set_admin_product, only: %i[ show edit update destroy ]
-  before_action :checkrole
+
   # GET /admin/products or /admin/products.json
   def index
     @admin_products = Product.all
@@ -69,7 +69,4 @@ class Admin::ProductsController < ApplicationController
       params.require(:product).permit(:name, :price, :avatar)
     end
 
-  def checkrole
-    current_user.role
-  end
 end

@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
 
-  has_many :lineitems
+  has_many :line_items
   has_one_attached :avatar
 end

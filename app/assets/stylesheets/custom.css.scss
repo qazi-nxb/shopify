@@ -14,7 +14,7 @@
 }
 .uname
 {
-padding-top: 3px;
+padding-top: 5px;
   width: max-content;
   font-size: 1.3rem;
   padding-right: 10px;
@@ -59,4 +59,34 @@ padding-top: 3px;
 {
   align-items: center;
   text-align: center;
+}
+
+.qbtn
+{
+  width: 50px;
+  text-align: center;
+}
+
+.cartimg
+{
+  width: 100px;
+  height: 100px;
+}
+.editbtn
+{
+  color: black;
+}
+
+#navbarDropdown
+{
+  border: none;
+  user-select: none;
+}
+
+.padt-8
+{
+  padding-top: 8px;
+}
+#navbarDropdown:after {
+  display: none;
 }

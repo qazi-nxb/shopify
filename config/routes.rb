@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   namespace :admin do
+    get 'welcome/index'
+  end
+  namespace :admin do
     get 'users/index'
   end
   namespace :admin do
     resources :products
     resources :users
+    resources :orders
   end
   devise_for :users
   get 'welcome/index'

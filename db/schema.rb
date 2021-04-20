@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_16_125239) do
+ActiveRecord::Schema.define(version: 2021_04_20_065248) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,23 +40,24 @@ ActiveRecord::Schema.define(version: 2021_04_16_125239) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "lineitems", force: :cascade do |t|
+  create_table "line_items", force: :cascade do |t|
     t.float "per_price"
     t.integer "quantity"
     t.string "total_price"
-    t.integer "product_id_id", null: false
-    t.integer "order_id_id", null: false
+    t.integer "product_id", null: false
+    t.integer "order_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["order_id_id"], name: "index_lineitems_on_order_id_id"
-    t.index ["product_id_id"], name: "index_lineitems_on_product_id_id"
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+    t.index ["product_id"], name: "index_line_items_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "user_id_id", null: false
+    t.integer "user_id", null: false
+    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id_id"], name: "index_orders_on_user_id_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -87,7 +88,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_125239) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "lineitems", "order_ids"
-  add_foreign_key "lineitems", "product_ids"
-  add_foreign_key "orders", "user_ids"
+  add_foreign_key "line_items", "orders"
+  add_foreign_key "line_items", "products"
+  add_foreign_key "orders", "users"
 end

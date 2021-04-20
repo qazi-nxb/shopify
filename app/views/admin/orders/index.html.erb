@@ -1,0 +1,27 @@
+  <table class="table table-bordered table-hover bg-light ">
+    <thead>
+    <tr>
+      <th> Order id </th>
+      <th> User Name </th>
+      <th> Total Price </th>
+      <th> Order status </th>
+      <th> Actions </th>
+    </tr>
+    </thead>
+      <% @order.each do |order|%>
+      <tbody>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.user.full_name %></td>
+        <td><%= order.total %></td>
+        <td><%= order.status %></td>
+        <td> <%= link_to 'Show', admin_order_path(order), class: "btn btn-primary btn-sm"%>
+          <%= link_to 'Delete', admin_order_path(order), method: :delete , class: "btn btn-danger btn-sm"%>
+          </td>
+      </tr>
+      </tbody>
+    <% end %>
+  </table>
+
+
+

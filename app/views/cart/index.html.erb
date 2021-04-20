@@ -2,6 +2,7 @@
     <table class="table table-bordered table-hover bg-light ">
       <thead>
         <tr>
+          <th> Product </th>
           <th> Product Name</th>
           <th> Product Price</th>
           <th> Product Quantity</th>
@@ -10,9 +11,10 @@
         </tr>
       </thead>
       <% session[:cart].each do |_, hsh| %>
-        <% product = Product.find(hsh["product_id"]) %>\
+        <% product = Product.find(hsh["product_id"]) %>
           <tbody>
             <tr>
+              <td><%= image_tag url_for(product.avatar), :alt => "Product image" ,class:"cartimg"%></td>
               <td><%= product.name %></td>
               <td><%= product.price %></td>
               <td><%= hsh["qty"].to_f %></td>
