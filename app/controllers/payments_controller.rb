@@ -17,7 +17,7 @@ class PaymentsController < ApplicationController
 
 
   def cash_on_delivery
-
+    @address = Address.new
   end
 
   def credit_cart_payment

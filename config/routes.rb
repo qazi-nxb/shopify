@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   namespace :admin do
     get 'welcome/index'
   end
@@ -19,5 +20,6 @@ Rails.application.routes.draw do
   get 'payments/index'
   get "cash_on_delivery", to: 'payments#cash_on_delivery'
   get "credit_cart_payment", to: 'payments#credit_cart_payment'
+  resources :addresses
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

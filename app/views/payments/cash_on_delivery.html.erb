@@ -1,0 +1,47 @@
+<br><h1 class="customheading display-4">Enter Address </h1>
+<div class="container">
+  <div class="col-8">
+
+    <%= form_for(@address,  url: {action: "create" , controller: "addresses"}) do |f| %>
+      <div class="form-group">
+        <%= f.label :country %>
+        <%= f.text_field :country, autofocus: true, autocomplete: 'Enter Country name', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :state %>
+        <%= f.text_field :state, autocomplete: 'Enter State Name', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :city  %>
+        <%= f.text_field :city, autocomplete: 'Enter city Name', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :zipcode %>
+        <%= f.text_field :zipcode, autocomplete: 'Enter Area Code', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :address_1 %>
+        <%= f.text_field :address_1, autocomplete: 'Enter St #, House # etc', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :address_2 %>
+        <%= f.text_field :address_2, autocomplete: 'Enter area name', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :phone %>
+        <%= f.number_field :phone, autocomplete: 'Enter phone number', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit  class: 'btn btn-primary' %>
+      </div>
+
+<% end %>
+  </div>
+</div>
