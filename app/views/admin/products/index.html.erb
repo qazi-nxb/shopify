@@ -29,7 +29,8 @@
 </table>
 
 <br>
-
+<div class="center">
 <%= link_to 'New Admin Product', new_admin_product_path , class: "btn btn-secondary btn-sm" %>
+</div>
 
-<%= will_paginate @admin_products, renderer: BootstrapPagination::Rails %>
+<%= will_paginate @admin_products, class: "digg_pagination mt-2" %>

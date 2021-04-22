@@ -3,9 +3,9 @@ class CreateLineItems < ActiveRecord::Migration[6.1]
     create_table :line_items do |t|
       t.float :per_price
       t.integer :quantity
-      t.string :total_price
-      t.references :products, null: false, foreign_key: true
-      t.references :orders, null: false, foreign_key: true
+      t.float :total_price
+      t.references :product, null: false, foreign_key: true
+      t.references :order, null: false, foreign_key: true
 
       t.timestamps
     end
