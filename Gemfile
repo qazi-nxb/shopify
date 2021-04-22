@@ -33,6 +33,11 @@ gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'devise-i18n'
 gem 'activestorage', '~> 6.1', '>= 6.1.3.1'
+gem 'acts-as-taggable-on', '~> 7.0'
+
+
+gem 'will_paginate', '~> 3.3'
+gem 'bootstrap-will_paginate', '~> 1.0.0'
 
 
 # Reduces boot times through caching; required in config/boot.rb

@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Price</th>
+      <th>Tags</th>
       <th> action </th>
     </tr>
   </thead>
@@ -16,6 +17,9 @@
       <tr>
         <td><%= admin_product.name %></td>
         <td><%= admin_product.price %></td>
+          <td><% admin_product.tag_list.each do |tag| %>
+              <%= tag%>
+            <% end %></td>
         <td><%= link_to 'Show', [:admin, admin_product] , class: "btn btn-success btn-sm"%>
         <%= link_to 'Edit', edit_admin_product_path(admin_product), class: "btn btn-warning btn-sm" %>
         <%= link_to 'Destroy', [:admin, admin_product], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
@@ -27,3 +31,5 @@
 <br>
 
 <%= link_to 'New Admin Product', new_admin_product_path , class: "btn btn-secondary btn-sm" %>
+
+<%= will_paginate @admin_products, renderer: BootstrapPagination::Rails %>

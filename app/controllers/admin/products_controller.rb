@@ -4,7 +4,8 @@ class Admin::ProductsController < Admin::BaseController
 
   # GET /admin/products or /admin/products.json
   def index
-    @admin_products = Product.all
+    #@articles = Article.paginate(page: params[:page], per_page: 3)
+    @admin_products = Product.paginate(page: params[:page], per_page:3)
   end
 
   # GET /admin/products/1 or /admin/products/1.json
@@ -58,6 +59,14 @@ class Admin::ProductsController < Admin::BaseController
     end
   end
 
+  def tagged
+    if params[:tag].present?
+      @admin_products = Product.tagged_with(params[:tag])
+    else
+      @admin_products = Product.all
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin_product
@@ -66,7 +75,7 @@ class Admin::ProductsController < Admin::BaseController
 
     # Only allow a list of trusted parameters through.
     def admin_product_params
-      params.require(:product).permit(:name, :price, :avatar)
+      params.require(:product).permit(:name, :price, :avatar, :tag_list)
     end
 
 end
