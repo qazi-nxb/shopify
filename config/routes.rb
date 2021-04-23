@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get "cash_on_delivery", to: 'payments#cash_on_delivery'
   get "credit_cart_payment", to: 'payments#credit_cart_payment'
   resources :addresses
-  get '/tagged', to: "admin/products#tagged", as: :tagged
+
+  get 'search', to: "products#search"
+  get '/search_products', to: "products#tagged", as: :tagged
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

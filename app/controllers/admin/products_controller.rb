@@ -61,13 +61,10 @@ class Admin::ProductsController < Admin::BaseController
     end
   end
 
-  def tagged
-    if params[:tag].present?
-      @admin_products = Product.tagged_with(params[:tag])
-    else
-      @admin_products = Product.all
-    end
-  end
+
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
