@@ -20,6 +20,8 @@ class Admin::ProductsController < Admin::BaseController
 
   # GET /admin/products/1/edit
   def edit
+    @admin_product = Product.find(params[:id])
+
   end
 
   # POST /admin/products or /admin/products.json

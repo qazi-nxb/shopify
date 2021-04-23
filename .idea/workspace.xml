@@ -5,29 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52211d70-793c-411f-982b-01200732a796" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shopify.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shopify.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/img2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/img3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/img4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/admin/orders_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/admin/orders_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/admin/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/admin/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/line_item.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/line_item.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/admin/products_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/admin/products_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/product.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/product.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/orders/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/orders/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/products/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/products/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/users/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/users/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/welcome/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/welcome/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20210420053738_create_line_items.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20210420053738_create_line_items.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20210420054724_create_orders.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20210420053724_create_orders.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20210420065248_change_references.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +38,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -217,6 +198,7 @@
       <workItem from="1618989112393" duration="596000" />
       <workItem from="1618990103428" duration="7944000" />
       <workItem from="1619073920628" duration="19981000" />
+      <workItem from="1619161877845" duration="2527000" />
     </task>
     <servers />
   </component>
