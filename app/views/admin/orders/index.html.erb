@@ -10,7 +10,7 @@
     </tr>
     </thead>
       <% @orders.each do |order|%>
-      <tbody>
+    <tbody>
       <tr>
         <td><%= order.id %></td>
         <td><%= order.user.full_name %></td>
@@ -18,11 +18,11 @@
         <td><%= order.status %></td>
         <td> <%= link_to 'Show', admin_order_path(order), class: "btn btn-primary btn-sm"%>
           <%= link_to 'Delete', admin_order_path(order), method: :delete , class: "btn btn-danger btn-sm"%>
-          </td>
+        </td>
       </tr>
-      </tbody>
+    </tbody>
     <% end %>
-  </table>
+</table>
 
 <%= will_paginate @orders, class: "digg_pagination" %>
 

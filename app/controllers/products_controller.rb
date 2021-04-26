@@ -1,15 +1,5 @@
 class ProductsController < ApplicationController
-  def search
-
-  end
   def tagged
-
-    # debugger
-    # if params[:tag].present?
-    #   @admin_products = Product.tagged_with(params[:tag])
-    # else
-    #   @admin_products = Product.all
-    # end
     if params[:tag].present?
       @products = Product.tagged_with(params[:tag], :any => true)
 
@@ -19,7 +9,7 @@ class ProductsController < ApplicationController
         end
       else
         respond_to do |format|
-          flash.now[:alert] = "No tags found"
+          flash.now[:alert] = "No results found with name '#{params[:tag]}'"
           format.js { render partial: 'products/result'}
         end
       end

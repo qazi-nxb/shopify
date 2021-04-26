@@ -1,7 +1,8 @@
 <br>
-<h1 class="display-4 customheading" > Products</h1>
+ <%= render 'products/search' %>
 <div class="container">
-  <div class="row">
+  <div class="row mainpage">
+
     <% @products.each do |product| %>
 
       <div class="col-lg-4 col-md-6 col-sm-12">
@@ -38,3 +39,15 @@
     <% end %>
   </div>
 </div>
+
+
+<script>
+
+
+
+    $(document).ready(function(){
+        $('.searchbtn').click(function(){
+            $('.mainpage').hide();
+        });
+    });
+</script>
