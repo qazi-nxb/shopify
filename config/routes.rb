@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get "credit_cart_payment", to: 'payments#credit_cart_payment'
   resources :addresses
   resources :categories
-
+  get 'show_subcategory', to: "categories#show_subcategory"
   get 'search', to: "products#search"
   get '/welcome/search_products', to: "products#tagged", as: :tagged
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

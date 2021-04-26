@@ -31,7 +31,7 @@ class Admin::ProductsController < Admin::BaseController
     respond_to do |format|
       if @admin_product.save
         format.html { redirect_to [:admin, @admin_product], notice: "Product was successfully created." }
-        format.json { render :show, status: :created, location: @admin_product }
+        format.json { render :'show.html.erb', status: :created, location: @admin_product }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @admin_product.errors, status: :unprocessable_entity }
@@ -44,7 +44,7 @@ class Admin::ProductsController < Admin::BaseController
     respond_to do |format|
       if @admin_product.update(admin_product_params)
         format.html { redirect_to [:admin, @admin_product], notice: "Product was successfully updated." }
-        format.json { render :show, status: :ok, location: @admin_product }
+        format.json { render :'show.html.erb', status: :ok, location: @admin_product }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @admin_product.errors, status: :unprocessable_entity }

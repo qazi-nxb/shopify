@@ -23,7 +23,7 @@ class Admin::ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to admin_product_url(Admin::Product.last)
   end
 
-  test "should show admin_product" do
+  test "should show.html.erb admin_product" do
     get admin_product_url(@admin_product)
     assert_response :success
   end

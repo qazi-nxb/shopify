@@ -1,0 +1,17 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+
+  <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+    <div class="navbar-nav align-content-center">
+      <% i=0 %>
+      <% until @category.tag_list.count == i %>
+        <% if @category.title!= @category.tag_list[i] %>
+          <%= link_to  @category.tag_list[i]  , show_subcategory_path(@category.tag_list[i]) , class: "nav-item nav-link"%>
+          <span class="nav-item nav-link">|</span>
+        <% end %>
+
+        <% i= i+1 %>
+      <% end %>
+    </div>
+  </div>
+</nav>
