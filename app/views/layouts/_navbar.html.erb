@@ -11,14 +11,30 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
         <% category = Category.all %>
         <% category.each do  |category| %>
-          <li class="nav-item <%= 'active' if request.path == category_path(category.id) %>" >
-            <%= link_to category.title, category_path(category.id), class: "nav-link "  %>
-          </li>
+
+        <li class="nav-item dropdown" data-dropdown="dropdown">
+          <%= link_to category.title, category_path(category.id), class: 'nav-link dropdown-toggle drptoggle', id: 'navbarDropdown', data: { hover: 'dropdown'}  %>
+
+
+
+          <div class="dropdown-menu drpmenu" aria-labelledby="navbarDropdown">
+            <% i=0 %>
+            <% until category.tag_list.count == i %>
+              <% if category.title!= category.tag_list[i] %>
+                <%= link_to  category.tag_list[i]  , show_subcategory_path(category.tag_list[i]) , class: "nav-item nav-link", style: "color : black "%>
+
+              <% end %>
+              <% i= i+1 %>
+            <% end %>
+          </div>
+        </li>
         <% end %>
       </ul>
     </div>
+
 
     <% if current_user %>
 
@@ -66,3 +82,4 @@
 <%end %>
   </div>
 </nav>
+

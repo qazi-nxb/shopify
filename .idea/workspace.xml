@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52211d70-793c-411f-982b-01200732a796" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/categories/_subnav.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/categories/index.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/categories/show_subcategory.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/admin/products_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/admin/products_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/categories/_subnav.html.erb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/categories/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/categories/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/admin/products_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/admin/products_controller_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/categories/show_subcategory.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/categories/show_subcategory.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +205,9 @@
       <workItem from="1618990103428" duration="7944000" />
       <workItem from="1619073920628" duration="19981000" />
       <workItem from="1619161877845" duration="14238000" />
-      <workItem from="1619423284718" duration="15188000" />
+      <workItem from="1619423284718" duration="16540000" />
+      <workItem from="1619442368659" duration="3221000" />
+      <workItem from="1619509512187" duration="8299000" />
     </task>
     <servers />
   </component>

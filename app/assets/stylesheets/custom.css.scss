@@ -97,6 +97,20 @@ padding-top: 5px;
  display: block;
 }
 
+.dropdown:hover .drpmenu{
+  display: block;
+}
+.drpmenu{
+  margin-top: 0;
+}
+.drptoggle::after {
+  content: none;
+}
+
+.dropdowncolor
+{
+  color: black;
+}
 
 .digg_pagination {
   background: white;

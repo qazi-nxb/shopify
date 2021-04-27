@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
     #@category = Category.find(params[:format])
     @category = Category.tagged_with(params[:format])
     @category = @category.first
-    @subcategory_products = Product.tagged_with(params["format"], :any => true)
+    @subcategory_products = Product.tagged_with("#{@category.title},#{params["format"]}", :all => true)
     #debugger
   end
 end
