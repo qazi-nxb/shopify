@@ -1,0 +1,31 @@
+
+<br>
+<h1 class="customheading display-4"> <%= @admin_category.title %>'s data </h1>
+
+<table class="table table-bordered table-hover bg-light ">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th> Tags </th>
+    <th> action </th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td><%= @admin_category.title %></td>
+    <% if @admin_category.tag_list != nil %>
+      <td><% @admin_category.tag_list.each do |tag| %>
+          <%= tag%>
+        <% end %>
+      </td>
+    <% end %>
+    <td>
+      <%= link_to 'Edit', edit_admin_category_path(@admin_category), class: "btn btn-warning btn-sm" %> |
+      <%= link_to 'Back', admin_categories_path, class: "btn btn-primary btn-sm" %></td>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+

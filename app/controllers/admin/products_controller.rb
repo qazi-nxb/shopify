@@ -10,6 +10,7 @@ class Admin::ProductsController < Admin::BaseController
 
   # GET /admin/products/1 or /admin/products/1.json
   def show
+
     @admin_product = Product.find(params[:id])
   end
 
@@ -74,7 +75,7 @@ class Admin::ProductsController < Admin::BaseController
 
     # Only allow a list of trusted parameters through.
     def admin_product_params
-      params.require(:product).permit(:name, :price, :avatar, :tag_list)
+      params.require(:product).permit(:name, :price, :avatar, :tag_list, :description)
     end
 
 end

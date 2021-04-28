@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_26_085409) do
+ActiveRecord::Schema.define(version: 2021_04_28_150558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_04_26_085409) do
     t.integer "zipcode"
     t.string "address_1"
     t.string "address_2"
-    t.integer "phone"
+    t.text "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 2021_04_26_085409) do
     t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "description"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|

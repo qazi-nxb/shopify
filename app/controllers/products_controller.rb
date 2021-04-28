@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
   def tagged
+
     if params[:tag].present?
       @products = Product.tagged_with(params[:tag], :any => true)
-
-      if @products && @products.count!=0
+      @search_products = Product.search(params[:tag])
+      if @products && @products.count!=0 || @search_products && @search_products.count!=0
         respond_to do |format|
           format.js { render partial: 'products/result'}
         end
@@ -14,8 +15,8 @@ class ProductsController < ApplicationController
         end
       end
     else
+      @products = Product.all
       respond_to do |format|
-        flash.now[:alert] = "please enter a tag name to search"
         format.js { render partial: 'products/result'}
       end
     end

@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Price</th>
+      <th>Description</th>
       <th>Tags</th>
       <th> action </th>
     </tr>
@@ -17,6 +18,7 @@
       <tr>
         <td><%= admin_product.name %></td>
         <td><%= admin_product.price %></td>
+        <td><%= admin_product.description %></td>
           <td><% admin_product.tag_list.each do |tag| %>
               <%= tag%>
             <% end %></td>

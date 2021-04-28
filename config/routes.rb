@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :products
     resources :users
     resources :orders
+    resources :categories
   end
   devise_for :users
   get 'welcome/index'
@@ -22,6 +23,8 @@ Rails.application.routes.draw do
   get "credit_cart_payment", to: 'payments#credit_cart_payment'
   resources :addresses
   resources :categories
+  resources :search, only: [:index]
+
   get 'show_subcategory', to: "categories#show_subcategory"
   get 'search', to: "products#search"
   get '/welcome/search_products', to: "products#tagged", as: :tagged
