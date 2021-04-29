@@ -25,6 +25,15 @@ Rails.application.routes.draw do
   resources :categories
   resources :search, only: [:index]
 
+  namespace :admin do
+    resources :products do
+      collection do
+        post :import
+      end
+    end
+  end
+
+
   get 'show_subcategory', to: "categories#show_subcategory"
   get 'search', to: "products#search"
   get '/welcome/search_products', to: "products#tagged", as: :tagged

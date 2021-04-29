@@ -6,6 +6,11 @@ class Admin::ProductsController < Admin::BaseController
   def index
     #@articles = Article.paginate(page: params[:page], per_page: 3)
     @admin_products = Product.paginate(page: params[:page], per_page:3)
+    admin_products = Product.all
+    respond_to do |format|
+      format.html
+      format.csv {send_data admin_products.to_csv, filename:"products-#{Date.today}.csv"}
+    end
   end
 
   # GET /admin/products/1 or /admin/products/1.json
@@ -63,7 +68,10 @@ class Admin::ProductsController < Admin::BaseController
   end
 
 
-
+  def import
+    Product.import(params[:file])
+    redirect_to root_url, notice: 'Products Uploaded successfully'
+  end
 
 
 

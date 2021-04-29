@@ -1,5 +1,5 @@
 <br>
-
+<div class="container">
 <h1 class="customheading display-4">Admin Products</h1>
 
 <table class="table table-bordered table-hover bg-light ">
@@ -30,9 +30,29 @@
   </tbody>
 </table>
 
-<br>
-<div class="center">
-<%= link_to 'New Admin Product', new_admin_product_path , class: "btn btn-secondary btn-sm" %>
+
+
+<div class="row">
+  <div class="col-3">
+    <%= link_to 'New Admin Product', new_admin_product_path , class: "btn btn-secondary btn-sm col-12" %>
+  </div>
+  <br>
+  <div class="col-3">
+    <%= link_to 'Export data', admin_products_path(format: 'csv') , class: "btn btn-secondary btn-sm col-12" %>
+  </div>
+  <br>
+  <div class="col-6">
+  <%= form_tag import_admin_products_path,class:"", multipart: true do %>
+      <%= file_field_tag :file, class: "form-control col-8 float-left" %>
+      <%= submit_tag 'Import CSV', class: "btn btn-primary col-4 float-right"%>
+    <% end %>
+  </div>
+</div>
+  <br>
+  <div class="row">
+    <%= will_paginate @admin_products, class: "digg_pagination mt-2 col-4 offset-4" %>
+  </div>
+
+
 </div>
 
-<%= will_paginate @admin_products, class: "digg_pagination mt-2" %>
